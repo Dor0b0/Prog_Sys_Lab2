@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <!---
-    FP 2023-08-21
-    Page web menu du jour
+    FP 2023-08-30
+    Page web menu du jour lab2
 -->
 <html lang="fr">
     <head>
         <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
-        <title>Mon site web super fun</title>     
+        <title>Mon site web super fun</title> 
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+        <script 
+            src="https://code.jquery.com/jquery-3.7.0.js" 
+            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" 
+            crossorigin="anonymous">
+        </script>
+        <!-- Raphael must be included before justgage -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        
     </head>
     <body>
 
@@ -15,43 +28,56 @@
             <h1 class="titre"><span class="firstLetter">M</span>enu du jour</h1>
             <img src="images/marioLogo.jpg" class="logo" alt="logo Mario">   
         </header>
-
-            <div class="centerTextAlign"> 
-                <ol>
-                    <li>
-                        Choix d'entrées
-                        <ul>
-                            <li>Salade du chef</li>
-                            <li><a href="page2.html#soupeLegumes">Soupe de légumes</a></li>
-                            <li>Bouchées surprise</li>
-                        </ul>
-                    </li>
-                    <li class="lighterText">
-                        Plats principaux
-                        <ul class="lighterText">
-                            <li>Vollaille de nos prairies</li>
-                            <li>Pêche du jour</li>
-                            <li>Bruschetta du jardin</li>
-                        </ul>
-                        <a href="images/bruschetta.jpg"><img src="images/bruschetta_mini.jpg" alt="bruschetta"></a>
-                    </li>
-                    <li>
-                        Fromages
-                        <ul>
-                            <li>Assiette du pays</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Desserts
-                        <ul class="desserts">
-                            <li><a href="images/savoureuxChoco.jpg">Savoureux au chocolat</a> </li>
-                            <li>Délice aux agrumes</li>
-                            <li>Ile flottante</li>
-                            <li><a href="page2.html#profiteroles">Profiteroles</a></li>
-                         </ul>
-                    </li>
-                </ol>
-
+            <div id="gauge" class="200x160px"></div>
+            <div class="text-center">
+                <button id="plusBouton" type="button" class="btn btn-success text-center">+</button>
+                <button id="moinsBouton" type="button" class="btn btn-danger text-center">-</button>
+            </div>
+            
+            <div class="container">
+                <section class="jumbotron">
+                    <div class="row"> 
+                        <ol>
+                            <div class="col-sm-8 text-center">
+                                <li>
+                                    Choix d'entrées
+                                    <ul>
+                                        <li>Salade du chef</li>
+                                        <li><a href="page2.html#soupeLegumes">Soupe de légumes</a></li>
+                                        <li>Bouchées surprise</li>
+                                    </ul>
+                                </li>
+                            
+                                <li class="lighterText">
+                                    Plats principaux
+                                    <ul class="lighterText">
+                                        <li>Vollaille de nos prairies</li>
+                                        <li>Pêche du jour</li>
+                                        <li>Bruschetta du jardin</li>
+                                    </ul>
+                                    <a href="images/bruschetta.jpg"><img src="images/bruschetta_mini.jpg" alt="bruschetta"></a>
+                                </li>
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <li>
+                                    Fromages
+                                    <ul>
+                                        <li>Assiette du pays</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Desserts
+                                    <ul class="desserts">
+                                        <li><a href="images/savoureuxChoco.jpg">Savoureux au chocolat</a> </li>
+                                        <li>Délice aux agrumes</li>
+                                        <li>Ile flottante</li>
+                                        <li><a href="page2.html#profiteroles">Profiteroles</a></li>
+                                    </ul>
+                                </li>
+                            </div>
+                        </ol>
+                    </div>
+                </section>
                 <a href="page2.html">Recettes des plats(page 2)</a><br>
                 <a href="https://www.mcdonalds.com/ca/en-ca.html" title="McDonald's, 1400 Boulevard Moody, Terrebonne, Quebec J6W 3K9" target="_blank">Mon restaurant préféré</a>  
 
@@ -60,5 +86,32 @@
         <footer class="centerText">
             Chez Mario, 1234 rue de la Moustache, Peach Town
         </footer>
+
+        <script>
+            var gauge = new JustGage({
+                id: "gauge",
+                value: 5,
+                min: 0,
+                max: 10,
+                title: "Gauge",  
+            });
+        </script>
+        <script>
+            var valGauge = 5;
+            $(function() {
+                $('#plusBouton').click(function() {
+                    if(valGauge < 10)
+                        valGauge++;
+                    gauge.refresh(valGauge);
+                });
+            });
+            $(function() {
+                $('#moinsBouton').click(function() {
+                    if(valGauge)
+                        valGauge--;
+                    gauge.refresh(valGauge);
+                });
+            });
+        </script>
     </body>
 </html>
