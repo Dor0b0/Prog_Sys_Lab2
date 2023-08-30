@@ -7,18 +7,9 @@ h1 {
     text-align: center;
 }
 
-.lighterText {
-    opacity: 0.8;
-
-}
-
 body {
     background-image: url("images/bgSiteWeb.jpg");
     
-}
-
-.desserts {
-    border-style: solid;
 }
 
 .titre {
@@ -33,34 +24,9 @@ body {
     color: red;
 }
 
-.logo {
-    width: 20px;
-    height: 100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-}
+.progress { margin-left: auto; margin-right:auto; }
 
-.centerText {
-    text-align: center;
-}
 
-.centerTextAlign {
-    width:50%;
-    margin: auto;   
-}
 
-table {
-
-    border-collapse: collapse; /* Bordures du tableau collées (plus joli) */
-
-}
-
-th,td /* Toutes les cellules des tableaux... */ {
-
-    border: 1px solid black; /* bordure 1px noire pleine */
-
-}
 
 

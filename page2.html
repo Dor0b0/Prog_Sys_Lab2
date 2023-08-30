@@ -6,8 +6,11 @@
 <html lang="fr">
     <head>
         <title>Mon site web super fun</title>
-        <link rel="stylesheet"href="style.css">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
         <meta charset="UTF-8">
+
         <script 
             src="https://code.jquery.com/jquery-3.7.0.js" 
             integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" 
@@ -15,21 +18,37 @@
         </script>
 
         <!-- Raphael must be included before justgage -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>  
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="centerTextAlign">
+        <header>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page2.html">Page des recettes</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="text-center">
             <h2 id="soupeLegumes">Soupe de légumes</h2>
+            <br>
+            <table class="table table-striped">
 
-            <table>
-
-                <caption>Liste d'ingrédients :</caption>
+                <caption class="text-center">Liste d'ingrédients</caption>
              
-                <thead> <!-- En-tête du tableau -->
+                <thead class="thead-dark"> <!-- En-tête du tableau -->
                     <tr>
-                        <th>Quantité</th>
-                        <th>Ingrédient</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Ingrédient</th>
                     </tr>
                 </thead>
              
@@ -68,16 +87,15 @@
                     </tr>
                 </tbody>
             </table>
-
-            <p style="font-family:verdana">
+            <p>
                 Dans une casserole à feu moyen, attendrir l’oignon dans l’huile. Ajouter les carottes, le céleri et le rutabaga.<br>
                 Poursuivre la cuisson 5 minutes. Ajouter les tomates et le bouillon. Porter à ébullition.<br>
                 Couvrir et laisser mijoter 40 minutes ou jusqu’à ce que les légumes soient tendres. Saler et poivrer.<br>
                 Ajouter les gourganes et poursuivre la cuisson de 2 à 5 minutes.
             </p>
         </div>
-        <p class="centerText"><img src="https://images.ricardocuisine.com/services/recipes/496x670_56345092054c9482e2f75f.jpg" alt="Soupe aux légumes" title="Soupe aux légumes"></p>
-        <div class="centerTextAlign">
+        <p class="text-center"><img src="https://images.ricardocuisine.com/services/recipes/496x670_56345092054c9482e2f75f.jpg" class="rounded-pill" alt="Soupe aux légumes" title="Soupe aux légumes"></p>
+        <div class="text-center">
     
             <h2 id="profiteroles">Profiteroles</h2>
             <p>
@@ -87,7 +105,7 @@
                 Remettre la casserole sur un feu doux et cuire en remuant la pâte pendant environ 2 minutes.
             </p>   
         </div>
-        <p class="centerText"><img src="images/profiteroles.jpg" alt="profiteroles" title="profiteroles"></p>
-        <a href="menu.html" class="centerText">Page d'accueil</a> 
+        <p class="text-center"><img src="images/profiteroles.jpg" class="rounded-pill" alt="profiteroles" title="profiteroles"></p>
+        <p class="text-center"><a href="menu.html" >Page d'accueil</a></p> 
     </body>
 </html>
